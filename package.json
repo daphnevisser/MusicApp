@@ -1,5 +1,5 @@
 {
-  "name": "MusicApp",
+  "name": "Upnotes",
   "version": "1.0.0",
   "description": "My music app",
   "engines": {
@@ -110,6 +110,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/daphnevisser/MusicApp"
+    "url": "https://github.com/daphnevisser/Upnotes"
   }
 }
