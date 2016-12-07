@@ -3,7 +3,9 @@
 ============================== */
 $font-stack: 'Montserrat', sans-serif;
 $primary-color: #364F6B;
+$main-color: #3FC1C9;
 $text-color: #F5F5F5;
+$detail-color: #FC5185;
 /* ==============================
    BASIC
 ============================== */
@@ -15,27 +17,42 @@ $text-color: #F5F5F5;
 body {
   font-family: $font-stack;
   font-size: 16px;
-  background-color: #e9e9e9;
+  background-color: $main-color;
   min-height: 100vh;
 }
 /* ==============================
    NAVBAR
 ============================== */
 nav {
-  height: 50px;
+  height: 52px;
   width: 100%;
-  background-color: $primary-color;
   list-style: none;
   li {
     display: inline-block;
-    width: 25%;
-    color: $text-color;
-    text-align: center;
     text-transform: uppercase;
     font-size: 70%;
+    width: 25%;
     .nav-icon {
       display: block;
       margin: 5px;
+    }
+    a {
+      display: inline-block;
+      height: 52px;
+      width: 100%;
+      background-color: $primary-color;
+      border-top: 3px solid #2b9399;
+      color: $text-color;
+      text-align: center;
+      text-decoration: none;
+      &:hover, &:active {
+        border-color: $detail-color;
+        background-color: $main-color;
+      }
+    }
+    .selected {
+      border-color: $detail-color;
+      background-color: $main-color;
     }
   }
 }
