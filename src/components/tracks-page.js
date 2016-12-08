@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTracks } from '../actions/index';
+import TracksList from './tracks-list';
 
 class TracksPage extends Component {
   componentDidMount() {
@@ -8,9 +9,15 @@ class TracksPage extends Component {
   }
   render() {
     return (
-      <div>TracksPage</div>
+      <TracksList tracks={this.props.tracks}/>
     );
   }
 }
 
-export default connect(null, {getTracks})(TracksPage);
+function mapStateToProps(state) {
+  return {
+    tracks: state.tracks
+  };
+}
+
+export default connect(mapStateToProps, {getTracks})(TracksPage);
