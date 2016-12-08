@@ -6,6 +6,7 @@ $primary-color: #364F6B;
 $main-color: #3FC1C9;
 $text-color: #F5F5F5;
 $detail-color: #FC5185;
+$border-color: #2b9399;
 /* ==============================
    BASIC
 ============================== */
@@ -41,7 +42,7 @@ nav {
       height: 52px;
       width: 100%;
       background-color: $primary-color;
-      border-top: 3px solid #2b9399;
+      border-top: 3px solid $border-color;
       color: $text-color;
       text-align: center;
       text-decoration: none;
@@ -53,6 +54,26 @@ nav {
     .selected {
       border-color: $detail-color;
       background-color: $main-color;
+    }
+  }
+}
+/* ==============================
+   TRACKS PAGE
+============================== */
+.list-of-tracks {
+  list-style: none;
+  li {
+    height: 40px;
+    background-color: $main-color;
+    border-bottom: 1px solid $border-color;
+  }
+  a {
+    color: $text-color;
+    text-decoration: none;
+    .play-icon {
+      color: $detail-color;
+      margin: 8px 8px 0;
+      font-size: 180%;
     }
   }
 }
