@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getTracks } from '../actions/index';
 
-const TracksPage = () => {
-  return(<div>TracksPage</div>);
-};
+class TracksPage extends Component {
+  componentDidMount() {
+    this.props.getTracks();
+  }
+  render() {
+    return (
+      <div>TracksPage</div>
+    );
+  }
+}
 
-export default TracksPage;
+export default connect(null, {getTracks})(TracksPage);
