@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTracks } from '../actions/index';
 import TracksList from './tracks-list';
+import Filter from './filter';
 
 class TracksPage extends Component {
   componentDidMount() {
-    this.props.getTracks();
+    this.props.getTracks("popularity_week", "pop");
   }
   render() {
     return (
-      <TracksList tracks={this.props.tracks}/>
+      <section>
+        <Filter comp="tracks"/>
+        <TracksList tracks={this.props.tracks}/>
+      </section>
     );
   }
 }

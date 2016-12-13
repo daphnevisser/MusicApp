@@ -11,10 +11,10 @@ const TracksList = (props) => {
   const listOfTracks = props.tracks.results.map((track) => {
     return(
       <li key={track.id}>
+        <FontAwesome name="play-circle-o" size="lg" className="play-icon" />
         <a href="#">
-          <FontAwesome name="play-circle-o" size="lg" className="play-icon" />
-          <span className="track-name">{track.name} - </span>
-          <span className="track-artist">{track.artist_name}</span>
+          <p><span className="track-name">{track.name} </span> <br />
+          <span className="track-artist">{track.artist_name}</span></p>
         </a>
       </li>
     );

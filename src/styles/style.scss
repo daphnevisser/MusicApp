@@ -2,11 +2,12 @@
    VARIABLES
 ============================== */
 $font-stack: 'Montserrat', sans-serif;
-$primary-color: #364F6B;
-$main-color: #3FC1C9;
+$primary-color: #3FC1C9;
+$main-color: #364F6B;
 $text-color: #F5F5F5;
 $detail-color: #FC5185;
 $border-color: #2b9399;
+$border-color-two: #416082;
 /* ==============================
    BASIC
 ============================== */
@@ -19,7 +20,9 @@ body {
   font-family: $font-stack;
   font-size: 16px;
   background-color: $main-color;
+  color: $text-color;
   min-height: 100vh;
+  width: 320px;
 }
 /* ==============================
    NAVBAR
@@ -46,6 +49,7 @@ nav {
       color: $text-color;
       text-align: center;
       text-decoration: none;
+      transition: border-color 0.4s, background-color 0.4s;
       &:hover, &:active {
         border-color: $detail-color;
         background-color: $main-color;
@@ -60,20 +64,63 @@ nav {
 /* ==============================
    TRACKS PAGE
 ============================== */
+.overflow {
+  width: 270px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .list-of-tracks {
   list-style: none;
   li {
-    height: 40px;
+    height: 50px;
     background-color: $main-color;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $border-color-two;
+    transition: background-color 0.7s, border-color 0.7s;
+    border-left: 3px solid $border-color-two;
+    &:hover {
+      background-color: $primary-color;
+      border-left: 3px solid $text-color;
+    }
+    .play-icon {
+      color: $detail-color;
+      margin: 12px 8px 0 5px;
+      font-size: 200%;
+      float: left;
+    }
   }
   a {
     color: $text-color;
     text-decoration: none;
-    .play-icon {
-      color: $detail-color;
-      margin: 8px 8px 0;
-      font-size: 180%;
+    margin-top: 5px;
+    p {
+      display: inline-block;
+      margin-top: 3px;
+      @extend .overflow;
+      .track-name {
+        font-size: 120%;
+      }
+      .track-artist {
+        font-size: 80%;
+      }
     }
+  }
+}
+/* ==============================
+   FILTER
+============================== */
+.filter {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 110%;
+  p {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  select {
+    background-color: $main-color;
+    color: $detail-color;
+    font-size: 100%;
+    border: 1px solid $primary-color;
   }
 }
