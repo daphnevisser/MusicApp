@@ -108,6 +108,7 @@ nav {
     }
     .track-name {
       font-size: 120%;
+      margin-bottom: 3px;
     }
     .track-artist {
       font-size: 80%;
@@ -173,6 +174,55 @@ nav {
       margin: 8px 0;
       font-size: 120%;
       @extend .overflow;
+    }
+  }
+}
+/* ==============================
+   ALBUMS PAGE
+============================== */
+.list-of-albums {
+  list-style: none;
+  li {
+    height: 52px;
+    background-color: $main-color;
+    border-bottom: 1px solid $border-color-two;
+    transition: background-color 0.7s, border-color 0.7s;
+    border-left: 3px solid $border-color-two;
+    position: relative;
+    &:hover {
+      background-color: $primary-color;
+      border-left: 3px solid $text-color;
+    }
+    img {
+      height: 50px;
+      width: 50px;
+      float: left;
+    }
+    .placeholder {
+      height: 50px;
+      width: 50px;
+      float: left;
+      background-color: $detail-color;
+      font-size: 60%;
+      padding: 20px 3px;
+    }
+  }
+  a {
+    color: $text-color;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    margin: 5px 0 0 10px;
+    p {
+      margin: 0;
+      @extend .overflow;
+    }
+    .album-name {
+      font-size: 120%;
+      margin-bottom: 3px;
+    }
+    .album-artist {
+      font-size: 80%;
     }
   }
 }

@@ -21,3 +21,11 @@ export function getArtists(sorting, genre) {
       payload: request
   };
 }
+
+export function getAlbums() {
+  const request = axios.get(`${ROOT_URL}albums/musicinfo/?client_id=${CLIENT_ID}&format=jsonpretty&limit=20&order=popularity_week&tag=indie&imagesize=60`);
+  return {
+      type: types.GET_ALBUMS,
+      payload: request
+  };
+}

@@ -13,12 +13,12 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/artists" activeClassName="selected">
-          <FontAwesome name="star" size="2x" className="nav-icon" />Artists
+          <FontAwesome name="id-badge" size="2x" className="nav-icon" />Artists
           </Link>
         </li>
         <li>
           <Link to="/albums" activeClassName="selected">
-          <FontAwesome name="id-badge" size="2x" className="nav-icon" />Album
+          <FontAwesome name="star" size="2x" className="nav-icon" />Album
           </Link>
         </li>
         <li>
