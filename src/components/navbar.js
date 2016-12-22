@@ -18,7 +18,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/albums" activeClassName="selected">
-          <FontAwesome name="star" size="2x" className="nav-icon" />Album
+          <FontAwesome name="star" size="2x" className="nav-icon" />Albums
           </Link>
         </li>
         <li>
