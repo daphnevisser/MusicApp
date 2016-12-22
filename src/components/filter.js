@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { getTracks } from '../actions/index';
+import { getTracks, getArtists } from '../actions/index';
 
 class Filter extends Component {
   constructor(props) {
@@ -25,6 +25,9 @@ class Filter extends Component {
     switch (this.props.comp) {
       case "tracks":
         this.props.getTracks(this.state.valueSorting, this.state.valueGenre);
+        break;
+      case "artists":
+        this.props.getArtists(this.state.valueSorting, this.state.valueGenre);
         break;
     }
   }
@@ -61,4 +64,4 @@ class Filter extends Component {
   }
 }
 
-export default connect(null, {getTracks})(Filter);
+export default connect(null, {getTracks, getArtists})(Filter);

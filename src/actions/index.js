@@ -14,8 +14,8 @@ export function getTracks(sorting, genre) {
   };
 }
 
-export function getArtists() {
-  const request = axios.get(`${ROOT_URL}artists/musicinfo/?client_id=${CLIENT_ID}&format=jsonpretty&limit=20&order=popularity_week&tag=indie`);
+export function getArtists(sorting, genre) {
+  const request = axios.get(`${ROOT_URL}artists/musicinfo/?client_id=${CLIENT_ID}&format=jsonpretty&limit=20&order=${sorting}&tag=${genre}`);
   return {
       type: types.GET_ARTISTS,
       payload: request

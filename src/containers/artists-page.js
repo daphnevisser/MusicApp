@@ -6,7 +6,7 @@ import Filter from '../components/filter';
 
 class ArtistsPage extends Component {
   componentDidMount() {
-    this.props.getArtists();
+    this.props.getArtists("popularity_week", "indie");
   }
   render() {
     return (
