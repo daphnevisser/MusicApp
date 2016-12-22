@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
-import TracksPage from './components/tracks-page';
+import TracksPage from './containers/tracks-page';
 import SearchPage from './components/search-page';
 import AlbumsPage from './components/albums-page';
 import ArtistsPage from './components/artists-page';

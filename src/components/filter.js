@@ -5,7 +5,7 @@ import { getTracks } from '../actions/index';
 class Filter extends Component {
   constructor(props) {
     super(props);
-    this.state = {valueSorting: 'popularity_week', valueGenre: "all"};
+    this.state = {valueSorting: 'popularity_week', valueGenre: "indie"};
 
     this.handleSortingChange = this.handleSortingChange.bind(this);
     this.handleGenreChange = this.handleGenreChange.bind(this);
@@ -41,7 +41,6 @@ class Filter extends Component {
           </select>
           <p> in </p>
           <select value={this.state.valueGenre} onChange={this.handleGenreChange}>
-            <option value="all">all genres</option>
             <option value="classical">classical</option>
             <option value="country">country</option>
             <option value="electronic">electronic</option>

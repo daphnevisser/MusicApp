@@ -65,7 +65,7 @@ nav {
    TRACKS PAGE
 ============================== */
 .overflow {
-  width: 270px;
+  width: 260px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -73,36 +73,44 @@ nav {
 .list-of-tracks {
   list-style: none;
   li {
-    height: 50px;
+    height: 52px;
     background-color: $main-color;
     border-bottom: 1px solid $border-color-two;
     transition: background-color 0.7s, border-color 0.7s;
     border-left: 3px solid $border-color-two;
+    position: relative;
     &:hover {
       background-color: $primary-color;
       border-left: 3px solid $text-color;
     }
     .play-icon {
+      position: absolute;
       color: $detail-color;
-      margin: 12px 8px 0 5px;
-      font-size: 200%;
+      left: 7px;
+      top: 10px;
+      font-size: 250%;
+    }
+    img {
+      height: 50px;
+      width: 50px;
       float: left;
     }
   }
   a {
     color: $text-color;
     text-decoration: none;
-    margin-top: 5px;
+    margin: 5px 0 0 10px;
+    display: inline-block;
+    position: absolute;
     p {
-      display: inline-block;
-      margin-top: 3px;
+      margin: 0;
       @extend .overflow;
-      .track-name {
-        font-size: 120%;
-      }
-      .track-artist {
-        font-size: 80%;
-      }
+    }
+    .track-name {
+      font-size: 120%;
+    }
+    .track-artist {
+      font-size: 80%;
     }
   }
 }
@@ -122,5 +130,6 @@ nav {
     color: $detail-color;
     font-size: 100%;
     border: 1px solid $primary-color;
+    border-radius: 2px;
   }
 }

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getTracks } from '../actions/index';
-import TracksList from './tracks-list';
-import Filter from './filter';
+import TracksList from '../components/tracks-list';
+import Filter from '../components/filter';
 
 class TracksPage extends Component {
   componentDidMount() {
-    this.props.getTracks("popularity_week", "pop");
+    this.props.getTracks("popularity_week", "indie");
   }
   render() {
     return (
