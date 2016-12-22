@@ -7,9 +7,17 @@ const CLIENT_ID = config.client_id;
 
 
 export function getTracks(sorting, genre) {
-  const request = axios.get(`${ROOT_URL}tracks/?client_id=${CLIENT_ID}&format=jsonpretty&limit=20&fuzzytags=${genre}&groupby=artist_id&boost=${sorting}`);
+  const request = axios.get(`${ROOT_URL}tracks/?client_id=${CLIENT_ID}&format=jsonpretty&limit=20&fuzzytags=${genre}&groupby=artist_id&boost=${sorting}&imagesize=60`);
   return {
       type: types.GET_TRACKS,
+      payload: request
+  };
+}
+
+export function getArtists() {
+  const request = axios.get(`${ROOT_URL}artists/musicinfo/?client_id=${CLIENT_ID}&format=jsonpretty&limit=20&order=popularity_week&tag=indie`);
+  return {
+      type: types.GET_ARTISTS,
       payload: request
   };
 }

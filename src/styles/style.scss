@@ -133,3 +133,46 @@ nav {
     border-radius: 2px;
   }
 }
+/* ==============================
+   ARTISTS PAGE
+============================== */
+.list-of-artists {
+  list-style: none;
+  li {
+    height: 52px;
+    background-color: $main-color;
+    border-bottom: 1px solid $border-color-two;
+    transition: background-color 0.7s, border-color 0.7s;
+    border-left: 3px solid $border-color-two;
+    position: relative;
+    &:hover {
+      background-color: $primary-color;
+      border-left: 3px solid $text-color;
+    }
+    img {
+      height: 50px;
+      width: 50px;
+      float: left;
+    }
+    .placeholder {
+      height: 50px;
+      width: 50px;
+      float: left;
+      background-color: $detail-color;
+      font-size: 60%;
+      padding: 20px 3px;
+    }
+  }
+  a {
+    color: $text-color;
+    text-decoration: none;
+    margin: 5px 0 0 10px;
+    display: inline-block;
+    position: absolute;
+    p {
+      margin: 8px 0;
+      font-size: 120%;
+      @extend .overflow;
+    }
+  }
+}
