@@ -119,7 +119,7 @@ nav {
    FILTER
 ============================== */
 .filter {
-  margin: 20px 0;
+  margin: 20px 10px 20px 0;
   text-align: center;
   font-size: 110%;
   p {
@@ -223,6 +223,45 @@ nav {
     }
     .album-artist {
       font-size: 80%;
+    }
+  }
+}
+/* ==============================
+   SEARCH PAGE
+============================== */
+.search-page {
+  .searchbar {
+    border: 2px solid $primary-color;
+    padding-left: 8px;
+    margin: 20px auto 10px;
+    width: 95%;
+    input {
+      height: 35px;
+      width: 93%;
+      font-size: 120%;
+      color: $detail-color;
+      border: none;
+      background-color: $main-color;
+      border-radius: 2px;
+      padding-left: 8px;
+    }
+  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $text-color;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: $text-color;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: $text-color;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $text-color;
+  }
+  .options {
+    input {
+      width: 10%;
+      margin-left: 10px;
     }
   }
 }

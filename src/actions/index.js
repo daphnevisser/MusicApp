@@ -30,3 +30,29 @@ export function getAlbums(sorting, genre) {
       payload: request
   };
 }
+
+// Search actions
+
+export function searchTracks(value) {
+  const request = axios.get(`${ROOT_URL}tracks/${CLIENT_ID}${FORMAT}&limit=20&namesearch=${value}&imagesize=60`);
+  return {
+      type: types.SEARCH_TRACKS,
+      payload: request
+  };
+}
+
+export function searchArtists(value) {
+  const request = axios.get(`${ROOT_URL}artists/${CLIENT_ID}${FORMAT}&limit=20&namesearch=${value}`);
+  return {
+      type: types.SEARCH_ARTISTS,
+      payload: request
+  };
+}
+
+export function searchAlbums(value) {
+  const request = axios.get(`${ROOT_URL}albums/${CLIENT_ID}${FORMAT}&limit=20&namesearch=${value}&imagesize=60`);
+  return {
+      type: types.SEARCH_ALBUMS,
+      payload: request
+  };
+}

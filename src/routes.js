@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from './components/app';
 import TracksPage from './containers/tracks-page';
-import SearchPage from './components/search-page';
+import SearchPage from './containers/search-page';
 import AlbumsPage from './containers/albums-page';
 import ArtistsPage from './containers/artists-page';
 
