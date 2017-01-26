@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
 import { searchAlbums, searchArtists, searchTracks } from '../actions/index';
+import SearchResults from '../components/search-results';
+import _ from 'lodash';
 
 class SearchPage extends Component {
   constructor(props) {
@@ -14,12 +16,18 @@ class SearchPage extends Component {
 
   onInputChange(event) {
     this.setState({term: event.target.value});
+    const debouncedAction = _.debounce(() => this.sendAction(), 800);
+    debouncedAction();
   }
   onRadioChange(event) {
     this.setState({radio: event.target.value});
+    this.setState({term: ''});
   }
   onFormSubmit(event) {
     event.preventDefault();
+    this.sendAction();
+  }
+  sendAction() {
     switch (this.state.radio) {
       case "tracks":
         this.props.searchTracks(this.state.term);
@@ -54,6 +62,9 @@ class SearchPage extends Component {
             onChange={this.onRadioChange}
             checked={this.state.radio === "albums"} />albums
         </form>
+        <div className="search-results">
+          <SearchResults search={this.props.searchResult} radio={this.state.radio} />
+        </div>
       </section>
     );
   }
