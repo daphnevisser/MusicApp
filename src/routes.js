@@ -6,6 +6,7 @@ import TracksPage from './containers/tracks-page';
 import SearchPage from './containers/search-page';
 import AlbumsPage from './containers/albums-page';
 import ArtistsPage from './containers/artists-page';
+import Artist from './containers/artist';
 
 export default (
   <Route path="/" component={App}>
@@ -13,5 +14,6 @@ export default (
     <Route path="/search" component={SearchPage} />
     <Route path="/albums" component={AlbumsPage} />
     <Route path="/artists" component={ArtistsPage} />
+    <Route path="/artist/:id" component={Artist} />
   </Route>
 );

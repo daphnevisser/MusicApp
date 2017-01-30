@@ -1,5 +1,6 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
+import { Link } from 'react-router';
 
 const TracksList = (props) => {
   if (!props.tracks) {
@@ -13,10 +14,10 @@ const TracksList = (props) => {
       <li key={track.id}>
         <img src={track.image} />
         <FontAwesome name="play-circle-o" size="lg" className="play-icon" />
-        <a href="#">
+        <div className="info">
           <p className="track-name">{track.name}</p>
-          <p className="track-artist">{track.artist_name}</p>
-        </a>
+          <Link className="track-artist" to={'/artist/' + track.artist_id}>{track.artist_name}</Link>
+        </div>
       </li>
     );
   });

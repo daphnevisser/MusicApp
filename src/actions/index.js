@@ -56,3 +56,13 @@ export function searchAlbums(value) {
       payload: request
   };
 }
+
+// Detail pages actions
+
+export function artistInfo(id) {
+  const request = axios.get(`${ROOT_URL}artists/tracks/${CLIENT_ID}${FORMAT}&id=${id}&imagesize=60`);
+  return {
+      type: types.ARTIST_INFO,
+      payload: request
+  };
+}

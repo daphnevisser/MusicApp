@@ -96,9 +96,8 @@ nav {
       float: left;
     }
   }
-  a {
-    color: $text-color;
-    text-decoration: none;
+  .info {
+
     margin: 5px 0 0 10px;
     display: inline-block;
     position: absolute;
@@ -106,9 +105,12 @@ nav {
       margin: 0;
       @extend .overflow;
     }
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
     .track-name {
       font-size: 120%;
-      margin-bottom: 3px;
     }
     .track-artist {
       font-size: 80%;

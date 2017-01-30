@@ -5,13 +5,15 @@
  import getArtistsReducer from './getArtistsReducer';
  import getAlbumsReducer from './getAlbumsReducer';
  import searchReducer from './searchReducers';
+ import artistInfoReducer from './artistInfoReducer';
 
  const rootReducer = combineReducers({
   routing: routerReducer,
   tracks: getTracksReducer,
   artists: getArtistsReducer,
   albums: getAlbumsReducer,
-  searchResult: searchReducer
+  searchResult: searchReducer,
+  artistInfo: artistInfoReducer
 });
 
 export default rootReducer;
