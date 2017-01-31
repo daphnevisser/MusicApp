@@ -59,10 +59,10 @@ export function searchAlbums(value) {
 
 // Detail pages actions
 
-export function artistInfo(id) {
+export function getArtistInfo(id) {
   const request = axios.get(`${ROOT_URL}artists/tracks/${CLIENT_ID}${FORMAT}&id=${id}&imagesize=60`);
   return {
-      type: types.ARTIST_INFO,
+      type: types.GET_ARTIST_INFO,
       payload: request
   };
 }

@@ -62,7 +62,7 @@ nav {
   }
 }
 /* ==============================
-   TRACKS PAGE
+   REUSABLE
 ============================== */
 .overflow {
   width: 260px;
@@ -70,7 +70,7 @@ nav {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.list-of-tracks {
+.list-style {
   list-style: none;
   li {
     height: 52px;
@@ -95,9 +95,16 @@ nav {
       width: 50px;
       float: left;
     }
+    .placeholder {
+      height: 50px;
+      width: 50px;
+      float: left;
+      background-color: $detail-color;
+      font-size: 60%;
+      padding: 20px 3px;
+    }
   }
   .info {
-
     margin: 5px 0 0 10px;
     display: inline-block;
     position: absolute;
@@ -114,6 +121,9 @@ nav {
     }
     .track-artist {
       font-size: 80%;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -137,45 +147,19 @@ nav {
   }
 }
 /* ==============================
+   TRACKS PAGE
+============================== */
+.list-of-tracks {
+
+}
+/* ==============================
    ARTISTS PAGE
 ============================== */
 .list-of-artists {
-  list-style: none;
-  li {
-    height: 52px;
-    background-color: $main-color;
-    border-bottom: 1px solid $border-color-two;
-    transition: background-color 0.7s, border-color 0.7s;
-    border-left: 3px solid $border-color-two;
-    position: relative;
-    &:hover {
-      background-color: $primary-color;
-      border-left: 3px solid $text-color;
-    }
-    img {
-      height: 50px;
-      width: 50px;
-      float: left;
-    }
-    .placeholder {
-      height: 50px;
-      width: 50px;
-      float: left;
-      background-color: $detail-color;
-      font-size: 60%;
-      padding: 20px 3px;
-    }
-  }
-  a {
-    color: $text-color;
-    text-decoration: none;
-    margin: 5px 0 0 10px;
-    display: inline-block;
-    position: absolute;
+  .info {
     p {
       margin: 8px 0;
       font-size: 120%;
-      @extend .overflow;
     }
   }
 }
@@ -183,42 +167,7 @@ nav {
    ALBUMS PAGE
 ============================== */
 .list-of-albums {
-  list-style: none;
-  li {
-    height: 52px;
-    background-color: $main-color;
-    border-bottom: 1px solid $border-color-two;
-    transition: background-color 0.7s, border-color 0.7s;
-    border-left: 3px solid $border-color-two;
-    position: relative;
-    &:hover {
-      background-color: $primary-color;
-      border-left: 3px solid $text-color;
-    }
-    img {
-      height: 50px;
-      width: 50px;
-      float: left;
-    }
-    .placeholder {
-      height: 50px;
-      width: 50px;
-      float: left;
-      background-color: $detail-color;
-      font-size: 60%;
-      padding: 20px 3px;
-    }
-  }
-  a {
-    color: $text-color;
-    text-decoration: none;
-    display: inline-block;
-    position: absolute;
-    margin: 5px 0 0 10px;
-    p {
-      margin: 0;
-      @extend .overflow;
-    }
+  .info {
     .album-name {
       font-size: 120%;
       margin-bottom: 3px;
@@ -267,53 +216,11 @@ nav {
     }
   }
   .search-results {
-    list-style: none;
     h3 {
       margin: 30px 0 15px;
       text-align: center;
     }
-    li {
-      height: 52px;
-      background-color: $main-color;
-      border-bottom: 1px solid $border-color-two;
-      transition: background-color 0.7s, border-color 0.7s;
-      border-left: 3px solid $border-color-two;
-      position: relative;
-      &:hover {
-        background-color: $primary-color;
-        border-left: 3px solid $text-color;
-      }
-      .play-icon {
-        position: absolute;
-        color: $detail-color;
-        left: 7px;
-        top: 10px;
-        font-size: 250%;
-      }
-      img {
-        height: 50px;
-        width: 50px;
-        float: left;
-      }
-      .placeholder {
-        height: 50px;
-        width: 50px;
-        float: left;
-        background-color: $detail-color;
-        font-size: 60%;
-        padding: 20px 3px;
-      }
-    }
-    a {
-      color: $text-color;
-      text-decoration: none;
-      display: inline-block;
-      position: absolute;
-      margin: 5px 0 0 10px;
-      p {
-        margin: 0;
-        @extend .overflow;
-      }
+    .info {
       .song-name {
         font-size: 120%;
         margin-bottom: 3px;
@@ -321,6 +228,32 @@ nav {
       .artist-name {
         font-size: 80%;
       }
+    }
+  }
+}
+
+/* ==============================
+   ARTIST INFO
+============================== */
+.artist {
+  .artist-name {
+    height: 120px;
+    img {
+      height: 80px;
+      float: left;
+      margin: 10px 10px;
+      max-width: 100px;
+    }
+    h3 {
+      float: left;
+      margin-top: 40px;
+      width: 200px;
+    }
+  }
+  .info {
+    .track-name {
+      font-size: 120%;
+      margin: 10px 0 0;
     }
   }
 }

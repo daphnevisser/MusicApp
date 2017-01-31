@@ -4,4 +4,4 @@ export const GET_ALBUMS = 'GET_ALBUMS';
 export const SEARCH_TRACKS = 'SEARCH_TRACKS';
 export const SEARCH_ARTISTS = 'SEARCH_ARTISTS';
 export const SEARCH_ALBUMS = 'SEARCH_ALBUMS';
-export const ARTIST_INFO = 'ARTIST_INFO';
+export const GET_ARTIST_INFO = 'GET_ARTIST_INFO';

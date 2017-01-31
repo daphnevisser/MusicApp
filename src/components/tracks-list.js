@@ -24,7 +24,7 @@ const TracksList = (props) => {
 
   return (
     <div>
-      <ul className="list-of-tracks">
+      <ul className="list-of-tracks list-style">
         {listOfTracks}
       </ul>
     </div>

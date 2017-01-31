@@ -11,17 +11,17 @@ const AlbumsList = (props) => {
     return(
       <li key={album.id}>
         {album.image ? <img src={album.image} /> : <div className="placeholder">No image</div>}
-        <a href="#">
+        <div className="info">
           <p className="album-name">{album.name}</p>
           <p className="album-artist">{album.artist_name}</p>
-        </a>
+        </div>
       </li>
     );
   });
 
   return (
     <div>
-      <ul className="list-of-albums">
+      <ul className="list-of-albums list-style">
         {listOfAlbums}
       </ul>
     </div>

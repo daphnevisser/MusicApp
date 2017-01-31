@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { artistInfo } from '../actions/index';
+import { getArtistInfo } from '../actions/index';
+import ArtistInfo from '../components/artist-info';
 
 class Artist extends Component {
   componentDidMount() {
-    this.props.artistInfo(this.props.params.id);
+    this.props.getArtistInfo(this.props.params.id);
   }
   render() {
     return (
       <div>
-        Artist info
+        <ArtistInfo artistInfo={this.props.artistInfo} />
       </div>
     );
   }
 }
 
-export default connect(null, { artistInfo })(Artist);
+function mapStateToProps(state) {
+  return {
+    artistInfo: state.artistInfo
+  };
+}
+
+export default connect(mapStateToProps, { getArtistInfo })(Artist);

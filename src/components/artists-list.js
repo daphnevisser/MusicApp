@@ -11,16 +11,16 @@ const ArtistsList = (props) => {
     return(
       <li key={artist.id}>
         {artist.image ? <img src={artist.image} /> : <div className="placeholder">No image</div>}
-        <a href="#">
+        <div className="info">
           <p className="artist-name">{artist.name}</p>
-        </a>
+        </div>
       </li>
     );
   });
 
   return (
     <div>
-      <ul className="list-of-artists">
+      <ul className="list-of-artists list-style">
         {listOfArtists}
       </ul>
     </div>
