@@ -156,10 +156,17 @@ nav {
    ARTISTS PAGE
 ============================== */
 .list-of-artists {
+  a {
+    color: $text-color;
+  }
   .info {
-    p {
-      margin: 8px 0;
+    margin-top: 12px;
+    .artist-name {
+      margin: 2px 0;
       font-size: 120%;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -170,10 +177,12 @@ nav {
   .info {
     .album-name {
       font-size: 120%;
-      margin-bottom: 3px;
     }
     .album-artist {
       font-size: 80%;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -227,6 +236,9 @@ nav {
       }
       .artist-name {
         font-size: 80%;
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -237,17 +249,37 @@ nav {
 ============================== */
 .artist {
   .artist-name {
-    height: 120px;
+    height: 100px;
     img {
       height: 80px;
       float: left;
-      margin: 10px 10px;
+      margin: 10px;
       max-width: 100px;
+    }
+    .placeholder {
+      height: 80px;
+      width: 80px;
+      float: left;
+      background-color: $detail-color;
+      margin: 10px;
+      padding: 30px 5px;
     }
     h3 {
       float: left;
       margin-top: 40px;
       width: 200px;
+    }
+  }
+  .join-website{
+    margin-left: 10px;
+    height: 60px;
+    .joindate {
+      font-size: 90%;
+    }
+    .website {
+      color: $text-color;
+      text-decoration: none;
+      font-size: 80%;
     }
   }
   .info {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const AlbumsList = (props) => {
   if (!props.albums) {
@@ -13,7 +14,7 @@ const AlbumsList = (props) => {
         {album.image ? <img src={album.image} /> : <div className="placeholder">No image</div>}
         <div className="info">
           <p className="album-name">{album.name}</p>
-          <p className="album-artist">{album.artist_name}</p>
+          <Link className="album-artist" to={'/artist/' + album.artist_id}>{album.artist_name}</Link>
         </div>
       </li>
     );

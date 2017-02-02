@@ -23,8 +23,12 @@ const ArtistInfo = (props) => {
   return (
     <section className="artist">
       <div className="artist-name">
-        <img src={artist.image} />
+        {artist.image ? <img src={artist.image} /> : <div className="placeholder">No image</div>}
         <h3>{artist.name}</h3>
+      </div>
+      <div className="join-website">
+        <p className="joindate">Joindate: {artist.joindate}</p>
+        <a href={artist.website} target="_blank" className="website">{artist.website}</a>
       </div>
       <ul className="list-style">
         {tracks}

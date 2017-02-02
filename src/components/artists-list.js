@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const ArtistsList = (props) => {
   if (!props.artists) {
@@ -10,10 +11,12 @@ const ArtistsList = (props) => {
   const listOfArtists = props.artists.results.map((artist) => {
     return(
       <li key={artist.id}>
-        {artist.image ? <img src={artist.image} /> : <div className="placeholder">No image</div>}
-        <div className="info">
-          <p className="artist-name">{artist.name}</p>
-        </div>
+        <Link className="artist-li" to={'/artist/' + artist.id}>
+          {artist.image ? <img src={artist.image} /> : <div className="placeholder">No image</div>}
+          <div className="info">
+            <p className="artist-name">{artist.name}</p>
+          </div>
+        </Link>
       </li>
     );
   });

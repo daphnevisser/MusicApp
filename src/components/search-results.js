@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import FontAwesome from 'react-fontawesome';
 
 const SearchResults = (props) => {
@@ -15,7 +16,7 @@ const SearchResults = (props) => {
         {props.radio == "tracks" ? <FontAwesome name="play-circle-o" size="lg" className="play-icon" /> : null}
         <div className="info">
           <p className="song-name">{result.name}</p>
-          <p className="artist-name">{result.artist_name}</p>
+          <Link className="artist-name" to={'/artist/' + result.artist_id}>{result.artist_name}</Link>
         </div>
       </li>
     );
