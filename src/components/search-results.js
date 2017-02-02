@@ -10,16 +10,38 @@ const SearchResults = (props) => {
   }
 
   const listOfResults = props.search.results.map((result) => {
-    return(
-      <li key={result.id}>
-        {result.image ? <img src={result.image} /> : <div className="placeholder">No image</div>}
-        {props.radio == "tracks" ? <FontAwesome name="play-circle-o" size="lg" className="play-icon" /> : null}
-        <div className="info">
-          <p className="song-name">{result.name}</p>
-          <Link className="artist-name" to={'/artist/' + result.artist_id}>{result.artist_name}</Link>
-        </div>
-      </li>
-    );
+    switch (props.radio) {
+      case "tracks":
+        return (
+          <li key={result.id}>
+            {result.image ? <img src={result.image} /> : <div className="placeholder">No image</div>}
+            <FontAwesome name="play-circle-o" size="lg" className="play-icon" />
+            <div className="info">
+              <p className="song-name">{result.name}</p>
+              <Link className="artist-name" to={'/artist/' + result.artist_id}>{result.artist_name}</Link>
+            </div>
+          </li>
+        );
+      case "albums":
+        return (
+          <li key={result.id}>
+            {result.image ? <img src={result.image} /> : <div className="placeholder">No image</div>}
+            <div className="info">
+              <Link className="album-name" to={'/album/' + result.id}>{result.name}</Link>
+              <Link className="artist-name" to={'/artist/' + result.artist_id}>{result.artist_name}</Link>
+            </div>
+          </li>
+        );
+      case "artists":
+        return (
+          <li key={result.id}>
+            {result.image ? <img src={result.image} /> : <div className="placeholder">No image</div>}
+            <div className="info sp">
+              <Link className="song-name" to={'/artist/' + result.artist_id}>{result.name}</Link>
+            </div>
+          </li>
+        );
+    }
   });
 
   return (

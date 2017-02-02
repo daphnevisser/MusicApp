@@ -5,3 +5,4 @@ export const SEARCH_TRACKS = 'SEARCH_TRACKS';
 export const SEARCH_ARTISTS = 'SEARCH_ARTISTS';
 export const SEARCH_ALBUMS = 'SEARCH_ALBUMS';
 export const GET_ARTIST_INFO = 'GET_ARTIST_INFO';
+export const GET_ALBUM_INFO = 'GET_ALBUM_INFO;'

@@ -177,6 +177,10 @@ nav {
   .info {
     .album-name {
       font-size: 120%;
+      display: block;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     .album-artist {
       font-size: 80%;
@@ -232,14 +236,26 @@ nav {
     .info {
       .song-name {
         font-size: 120%;
-        margin-bottom: 3px;
+        @extend .overflow;
       }
       .artist-name {
         font-size: 80%;
+        @extend .overflow;
         &:hover {
           text-decoration: underline;
         }
       }
+      .album-name {
+        font-size: 120%;
+        display: block;
+        @extend .overflow;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .sp {
+      margin-top: 15px;
     }
   }
 }
@@ -286,6 +302,71 @@ nav {
     .track-name {
       font-size: 120%;
       margin: 10px 0 0;
+    }
+  }
+}
+
+/* ==============================
+   ALBUM INFO
+============================== */
+.album {
+  .album-name {
+    height: 100px;
+    img {
+      height: 80px;
+      float: left;
+      margin: 10px;
+      max-width: 100px;
+    }
+    .placeholder {
+      height: 80px;
+      width: 80px;
+      float: left;
+      background-color: $detail-color;
+      margin: 10px;
+      padding: 30px 5px;
+    }
+    h3 {
+      float: left;
+      margin: 25px 0 5px;
+      width: 200px;
+    }
+    .artist-name {
+      font-size: 85%;
+      color: $text-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .releasedate {
+    font-size: 90%;
+    margin-left: 10px;
+  }
+  .album-tracks {
+    list-style: none;
+    margin-top: 20px;
+    li {
+      height: 35px;
+      background-color: $main-color;
+      border-bottom: 1px solid $border-color-two;
+      transition: background-color 0.7s, border-color 0.7s;
+      border-left: 3px solid $border-color-two;
+      position: relative;
+      &:hover {
+        background-color: $primary-color;
+        border-left: 3px solid $text-color;
+      }
+      .simple-play-icon {
+        float: left;
+        color: $detail-color;
+        margin: 8px 10px;
+        font-size: 150%;
+      }
+      .track-name {
+        padding-top: 8px;
+      }
     }
   }
 }

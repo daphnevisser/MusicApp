@@ -11,9 +11,11 @@ const AlbumsList = (props) => {
   const listOfAlbums = props.albums.results.map((album) => {
     return(
       <li key={album.id}>
-        {album.image ? <img src={album.image} /> : <div className="placeholder">No image</div>}
+        <Link to={'/album/' + album.id}>
+          {album.image ? <img src={album.image} /> : <div className="placeholder">No image</div>}
+        </Link>
         <div className="info">
-          <p className="album-name">{album.name}</p>
+          <Link className="album-name" to={'/album/' + album.id}>{album.name}</Link>
           <Link className="album-artist" to={'/artist/' + album.artist_id}>{album.artist_name}</Link>
         </div>
       </li>
