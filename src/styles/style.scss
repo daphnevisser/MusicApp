@@ -99,7 +99,7 @@ nav {
       height: 50px;
       width: 50px;
       float: left;
-      background-color: $detail-color;
+      background-color: #00BB27;
       font-size: 60%;
       padding: 20px 3px;
     }
@@ -236,6 +236,7 @@ nav {
     .info {
       .song-name {
         font-size: 120%;
+        display: block;
         @extend .overflow;
       }
       .artist-name {
@@ -366,6 +367,8 @@ nav {
       }
       .track-name {
         padding-top: 8px;
+        @extend .overflow;
+        width: 278px;
       }
     }
   }

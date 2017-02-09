@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getTracks } from '../actions/index';
+import { getTracks, setTrack, addTrack } from '../actions/index';
 import TracksList from '../components/tracks-list';
 import Filter from '../components/filter';
 
@@ -12,7 +12,7 @@ class TracksPage extends Component {
     return (
       <section>
         <Filter comp="tracks"/>
-        <TracksList tracks={this.props.tracks}/>
+        <TracksList tracks={this.props.tracks} setTrack={this.props.setTrack} addTrack={this.props.addTrack}/>
       </section>
     );
   }
@@ -24,4 +24,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {getTracks})(TracksPage);
+export default connect(mapStateToProps, {getTracks, setTrack, addTrack})(TracksPage);

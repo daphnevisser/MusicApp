@@ -29,6 +29,7 @@ const AlbumInfo = (props) => {
         <Link className="artist-name" to={'/artist/' + album.artist_id}>{album.artist_name}</Link>
       </div>
       <p className="releasedate">Releasedate: {album.releasedate}</p>
+      <button className="default-button" onClick={() => props.addAlbum(album.tracks)}>Add to queue</button>
       <ul className="album-tracks">
         {tracks}
       </ul>

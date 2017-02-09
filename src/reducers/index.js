@@ -7,6 +7,7 @@
  import searchReducer from './searchReducers';
  import getArtistInfoReducer from './getArtistInfoReducer';
  import getAlbumInfoReducer from './getAlbumInfoReducer';
+ import * as player from './playerReducers';
 
  const rootReducer = combineReducers({
   routing: routerReducer,
@@ -15,7 +16,9 @@
   albums: getAlbumsReducer,
   searchResult: searchReducer,
   artistInfo: getArtistInfoReducer,
-  albumInfo: getAlbumInfoReducer
+  albumInfo: getAlbumInfoReducer,
+  currentTrack: player.setTrackReducer,
+  list: player.listReducer
 });
 
 export default rootReducer;

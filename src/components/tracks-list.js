@@ -15,9 +15,15 @@ const TracksList = (props) => {
         <img src={track.image} />
         <FontAwesome name="play-circle-o" size="lg" className="play-icon" />
         <div className="info">
-          <p className="track-name">{track.name}</p>
+          <p className="track-name" onClick={() => props.setTrack(track)}>{track.name}</p>
           <Link className="track-artist" to={'/artist/' + track.artist_id}>{track.artist_name}</Link>
         </div>
+        <FontAwesome className="addbutton-tracks"
+            onClick={() => props.addTrack(track)}
+            name="plus"
+            size="lg"
+            title="Add to queue"
+          />
       </li>
     );
   });

@@ -1,4 +1,6 @@
-import { SEARCH_ALBUMS, SEARCH_TRACKS, SEARCH_ARTISTS } from '../constants/actionTypes';
+import { SEARCH_ALBUMS, SEARCH_TRACKS, SEARCH_ARTISTS, CLEAR_RESULTS } from '../constants/actionTypes';
+
+const INITIAL_STATE = {};
 
 export default function searchReducer (state = null, action) {
     switch (action.type) {
@@ -8,6 +10,8 @@ export default function searchReducer (state = null, action) {
             return action.payload.data;
         case SEARCH_ALBUMS:
             return action.payload.data;
+        case CLEAR_RESULTS:
+            return null;
     }
     return state;
 }

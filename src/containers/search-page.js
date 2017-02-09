@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
-import { searchAlbums, searchArtists, searchTracks } from '../actions/index';
+import { searchAlbums, searchArtists, searchTracks, clearResults } from '../actions/index';
 import SearchResults from '../components/search-results';
 import _ from 'lodash';
 
@@ -20,8 +20,8 @@ class SearchPage extends Component {
     debouncedAction();
   }
   onRadioChange(event) {
-    this.setState({radio: event.target.value});
-    this.setState({term: ''});
+    this.setState({term: '', radio: event.target.value});
+    this.props.clearResults();
   }
   onFormSubmit(event) {
     event.preventDefault();
@@ -76,4 +76,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {searchAlbums, searchArtists, searchTracks})(SearchPage);
+export default connect(mapStateToProps, {searchAlbums, searchArtists, searchTracks, clearResults})(SearchPage);

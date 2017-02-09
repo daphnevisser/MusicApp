@@ -57,6 +57,12 @@ export function searchAlbums(value) {
   };
 }
 
+export function clearResults() {
+  return {
+      type: types.CLEAR_RESULTS
+  };
+}
+
 // Detail pages actions
 
 export function getArtistInfo(id) {
@@ -72,5 +78,46 @@ export function getAlbumInfo(id) {
   return {
       type: types.GET_ALBUM_INFO,
       payload: request
+  };
+}
+
+// PLayer actions
+export function setTrack(track) {
+  return {
+    type: types.SET_TRACK,
+    payload: track
+  };
+
+}
+
+export function addTrack(track) {
+  return {
+    type: types.ADD_TRACK,
+    payload: track
+  };
+}
+
+export function addAlbum(tracks) {
+  return {
+    type: types.ADD_ALBUM,
+    payload: tracks
+  };
+}
+
+export function clearList() {
+  return {
+    type: types.CLEAR_LIST
+  };
+}
+
+export function incrementPosition() {
+  return  {
+    type: types.INCREMENT_POSITION
+  };
+}
+
+export function replayList() {
+  return  {
+    type: types.REPLAY_LIST
   };
 }
