@@ -35,7 +35,7 @@ nav {
     display: inline-block;
     text-transform: uppercase;
     font-size: 70%;
-    width: 25%;
+    width: 20%;
     .nav-icon {
       display: block;
       margin: 5px;
@@ -125,6 +125,21 @@ nav {
         text-decoration: underline;
       }
     }
+  }
+}
+.default-button {
+  background: transparent;
+  color: $text-color;
+  border: 2px solid $detail-color;
+  font-size: 75%;
+  padding: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 10px;
+  border-radius: 2px;
+  transition: background 0.4s;
+  &:hover {
+    background: $detail-color;
   }
 }
 /* ==============================
@@ -345,31 +360,41 @@ nav {
     font-size: 90%;
     margin-left: 10px;
   }
-  .album-tracks {
-    list-style: none;
-    margin-top: 20px;
-    li {
-      height: 35px;
-      background-color: $main-color;
-      border-bottom: 1px solid $border-color-two;
-      transition: background-color 0.7s, border-color 0.7s;
-      border-left: 3px solid $border-color-two;
-      position: relative;
-      &:hover {
-        background-color: $primary-color;
-        border-left: 3px solid $text-color;
-      }
-      .simple-play-icon {
-        float: left;
-        color: $detail-color;
-        margin: 8px 10px;
-        font-size: 150%;
-      }
-      .track-name {
-        padding-top: 8px;
-        @extend .overflow;
-        width: 278px;
-      }
+}
+.album-tracks {
+  list-style: none;
+  margin-top: 20px;
+  li {
+    height: 35px;
+    background: $main-color;
+    border-bottom: 1px solid $border-color-two;
+    transition: background 0.7s, border-color 0.7s;
+    border-left: 3px solid $border-color-two;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary-color;
+      border-left: 3px solid $text-color;
     }
+    .simple-play-icon {
+      float: left;
+      color: $detail-color;
+      margin: 8px 10px;
+      font-size: 150%;
+    }
+    .track-name {
+      padding-top: 8px;
+      @extend .overflow;
+      width: 278px;
+    }
+  }
+}
+/* ==============================
+   QUEUE
+============================== */
+.queue {
+  .queue-list {
+    @extend .album-tracks;
+    margin-top: 0;
   }
 }

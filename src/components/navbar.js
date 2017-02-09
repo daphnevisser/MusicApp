@@ -28,7 +28,7 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/queue" activeClassName="selected">
-          <FontAwesome name="search" size="2x" className="nav-icon" />Queue
+          <FontAwesome name="list" size="2x" className="nav-icon" />Queue
           </Link>
         </li>
       </ul>
