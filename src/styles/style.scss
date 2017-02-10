@@ -3,11 +3,13 @@
 ============================== */
 $font-stack: 'Montserrat', sans-serif;
 $primary-color: #3FC1C9;
-$main-color: #364F6B;
+$main-color: #2b3e54;
 $text-color: #F5F5F5;
 $detail-color: #FC5185;
 $border-color: #2b9399;
 $border-color-two: #416082;
+$player-color: #1f2d3e;
+$placeholder: #00BB27;
 /* ==============================
    BASIC
 ============================== */
@@ -99,7 +101,7 @@ nav {
       height: 50px;
       width: 50px;
       float: left;
-      background-color: #00BB27;
+      background-color: $placeholder;
       font-size: 60%;
       padding: 20px 3px;
     }
@@ -275,7 +277,6 @@ nav {
     }
   }
 }
-
 /* ==============================
    ARTIST INFO
 ============================== */
@@ -397,4 +398,138 @@ nav {
     @extend .album-tracks;
     margin-top: 0;
   }
+}
+/* ==============================
+   PLAYER
+============================== */
+.player {
+  width: 320px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  background: $player-color;
+  .position-slider .InputRange {
+    height: 0;
+  }
+  .song-length {
+    font-size: 75%;
+    position: absolute;
+    margin-top: 5px;
+  }
+  .duration-time {
+    right: 5px;
+  }
+  .current-time {
+    left: 5px;
+  }
+  .player-song-info {
+    margin: 23px 5px 10px;
+    width: 40%;
+    font-size: 85%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+    text-align: center;
+  }
+  .player-controls {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    float: left;
+    margin-top: 20px;
+    .play-icon {
+      font-size: 120%;
+      margin: 0 8px;
+      transition: color 0.4s;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+  .volume-control {
+    display: inline-block;
+    width: 35%;
+    margin-top: 20px;
+    float: left;
+    text-align: center;
+    .sound-slider {
+      display: inline-block;
+      width: 70%;
+    }
+    .volume-icon {
+      margin-right: 5px;
+      font-size: 115%;
+    }
+  }
+}
+/* ==============================
+   INPUT RANGE
+============================== */
+.InputRange-slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: $detail-color;
+  border: 1px solid $detail-color;
+  border-radius: 100%;
+  cursor: pointer;
+  display: block;
+  height: 0.65rem;
+  margin-left: -0.33rem;
+  margin-top: -0.425rem;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transition: -webkit-transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  width: 0.65rem; }
+  .InputRange-slider:active {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3); }
+  .InputRange-slider:focus {
+  box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }
+  .InputRange.is-disabled .InputRange-slider {
+  background: #cccccc;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+   -webkit-transform: none;
+  transform: none;
+}
+.InputRange-sliderContainer {
+  -webkit-transition: left 0.3s ease-out;
+  transition: left 0.3s ease-out;
+}
+.InputRange-label {
+  display: none;
+}
+.InputRange-track {
+  background: #eeeeee;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: block;
+  height: 0.3rem;
+  position: relative;
+  -webkit-transition: left 0.3s ease-out, width 0.3s ease-out;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+.InputRange.is-disabled .InputRange-track {
+  background: #eeeeee;
+}
+.InputRange-track--container {
+  left: 0;
+  margin-top: -0.15rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+.InputRange-track--active {
+  background: $primary-color;
+}
+.InputRange {
+  position: relative;
+  width: 100%;
+  height: 1rem;
 }

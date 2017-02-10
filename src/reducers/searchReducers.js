@@ -1,7 +1,5 @@
 import { SEARCH_ALBUMS, SEARCH_TRACKS, SEARCH_ARTISTS, CLEAR_RESULTS } from '../constants/actionTypes';
 
-const INITIAL_STATE = {};
-
 export default function searchReducer (state = null, action) {
     switch (action.type) {
         case SEARCH_ARTISTS:
