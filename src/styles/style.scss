@@ -67,7 +67,7 @@ nav {
    REUSABLE
 ============================== */
 .overflow {
-  width: 260px;
+  width: 230px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -81,9 +81,13 @@ nav {
     transition: background-color 0.7s, border-color 0.7s;
     border-left: 3px solid $border-color-two;
     position: relative;
+    cursor: pointer;
     &:hover {
       background-color: $primary-color;
       border-left: 3px solid $text-color;
+      .add-button {
+        color: $text-color;
+      }
     }
     .play-icon {
       position: absolute;
@@ -91,6 +95,10 @@ nav {
       left: 7px;
       top: 10px;
       font-size: 250%;
+      transition: color 0.4s;
+      &:hover {
+        color: $text-color;
+      }
     }
     img {
       height: 50px;
@@ -102,8 +110,18 @@ nav {
       width: 50px;
       float: left;
       background-color: $placeholder;
-      font-size: 60%;
+      font-size: 55%;
       padding: 20px 3px;
+    }
+    .add-button {
+      float: right;
+      margin-top: 20px;
+      margin-right: 2px;
+      color: $primary-color;
+      transition: color 0.4s;
+      &:hover {
+        color: $detail-color;
+      }
     }
   }
   .info {
@@ -113,6 +131,7 @@ nav {
     p {
       margin: 0;
       @extend .overflow;
+      cursor: pointer;
     }
     a {
       text-decoration: none;
@@ -144,11 +163,23 @@ nav {
     background: $detail-color;
   }
 }
+.jamendo {
+  font-size: 80%;
+  text-align: center;
+  margin-top: 10px;
+  a {
+    color: $detail-color;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
 /* ==============================
    FILTER
 ============================== */
 .filter {
-  margin: 20px 10px 20px 0;
+  margin: 10px 10px 20px 0;
   text-align: center;
   font-size: 110%;
   p {
@@ -251,6 +282,7 @@ nav {
       text-align: center;
     }
     .info {
+      color: $text-color;
       .song-name {
         font-size: 120%;
         display: block;
@@ -313,6 +345,7 @@ nav {
       color: $text-color;
       text-decoration: none;
       font-size: 80%;
+      width: 300px;
     }
   }
   .info {
@@ -345,7 +378,7 @@ nav {
     }
     h3 {
       float: left;
-      margin: 25px 0 5px;
+      margin: 20px 0 5px;
       width: 200px;
     }
     .artist-name {
@@ -376,6 +409,9 @@ nav {
     &:hover {
       background-color: $primary-color;
       border-left: 3px solid $text-color;
+      .add-button {
+        color: $text-color;
+      }
     }
     .simple-play-icon {
       float: left;
@@ -386,7 +422,20 @@ nav {
     .track-name {
       padding-top: 8px;
       @extend .overflow;
-      width: 278px;
+      width: 240px;
+    }
+    .add-button {
+      float: right;
+      margin-top: 10px;
+      margin-right: 2px;
+      color: $primary-color;
+      transition: color 0.4s;
+      &:hover {
+        color: $detail-color;
+      }
+    }
+    .info {
+      display: inline-block;
     }
   }
 }

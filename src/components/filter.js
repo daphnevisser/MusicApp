@@ -12,13 +12,11 @@ class Filter extends Component {
   }
 
   handleSortingChange(event) {
-    this.setState({valueSorting: event.target.value});
-    this.sendAction();
+    this.setState({valueSorting: event.target.value}, this.sendAction);
   }
 
   handleGenreChange(event) {
-    this.setState({valueGenre: event.target.value});
-    this.sendAction();
+    this.setState({valueGenre: event.target.value}, this.sendAction);
   }
 
   sendAction() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getArtistInfo } from '../actions/index';
+import { getArtistInfo, addTrack, setTrack } from '../actions/index';
 import ArtistInfo from '../components/artist-info';
 
 class Artist extends Component {
@@ -10,7 +10,7 @@ class Artist extends Component {
   render() {
     return (
       <div>
-        <ArtistInfo artistInfo={this.props.artistInfo} />
+        <ArtistInfo artistInfo={this.props.artistInfo} addTrack={this.props.addTrack} setTrack={this.props.setTrack} />
       </div>
     );
   }
@@ -22,4 +22,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { getArtistInfo })(Artist);
+export default connect(mapStateToProps, { getArtistInfo, addTrack, setTrack })(Artist);

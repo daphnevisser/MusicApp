@@ -13,17 +13,17 @@ const TracksList = (props) => {
     return(
       <li key={track.id}>
         <img src={track.image} />
-        <FontAwesome name="play-circle-o" size="lg" className="play-icon" />
+        <FontAwesome name="play-circle-o" size="lg" className="play-icon"
+          onClick={() => props.setTrack(track)} title="Play song" />
         <div className="info">
           <p className="track-name" onClick={() => props.setTrack(track)}>{track.name}</p>
           <Link className="track-artist" to={'/artist/' + track.artist_id}>{track.artist_name}</Link>
         </div>
-        <FontAwesome className="addbutton-tracks"
+        <FontAwesome className="add-button"
             onClick={() => props.addTrack(track)}
             name="plus"
             size="lg"
-            title="Add to queue"
-          />
+            title="Add to queue" />
       </li>
     );
   });

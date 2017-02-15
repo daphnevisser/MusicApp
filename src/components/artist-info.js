@@ -12,10 +12,16 @@ const ArtistInfo = (props) => {
     return (
       <li key={track.id}>
         <img src={track.album_image} />
-        <FontAwesome name="play-circle-o" size="lg" className="play-icon" />
+        <FontAwesome name="play-circle-o" size="lg" className="play-icon"
+          onClick={() => props.setTrack(track)} title="Play song" />
         <div className="info">
-          <p className="track-name">{track.name}</p>
+          <p className="track-name" onClick={() => props.setTrack(track)}>{track.name}</p>
         </div>
+        <FontAwesome className="add-button"
+            onClick={() => props.addTrack(track)}
+            name="plus"
+            size="lg"
+            title="Add to queue" />
       </li>
     );
   });
@@ -28,7 +34,7 @@ const ArtistInfo = (props) => {
       </div>
       <div className="join-website">
         <p className="joindate">Joindate: {artist.joindate}</p>
-        <a href={artist.website} target="_blank" className="website">{artist.website}</a>
+        <a href={artist.website} target="_blank" className="website">{artist.website ? "Website" : null}</a>
       </div>
       <ul className="list-style">
         {tracks}

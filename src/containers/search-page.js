@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 import { connect } from 'react-redux';
-import { searchAlbums, searchArtists, searchTracks, clearResults } from '../actions/index';
+import { searchAlbums, searchArtists, searchTracks, clearResults, setTrack, addTrack } from '../actions/index';
 import SearchResults from '../components/search-results';
 import _ from 'lodash';
 
@@ -13,7 +13,9 @@ class SearchPage extends Component {
     this.onRadioChange = this.onRadioChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
-
+  componentWillMount() {
+    this.props.clearResults();
+  }
   onInputChange(event) {
     this.setState({term: event.target.value});
     const debouncedAction = _.debounce(() => this.sendAction(), 800);
@@ -63,7 +65,8 @@ class SearchPage extends Component {
             checked={this.state.radio === "albums"} />albums
         </form>
         <div className="search-results">
-          <SearchResults search={this.props.searchResult} radio={this.state.radio} />
+          <SearchResults search={this.props.searchResult} radio={this.state.radio}
+            setTrack={this.props.setTrack} addTrack={this.props.addTrack} />
         </div>
       </section>
     );
@@ -76,4 +79,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {searchAlbums, searchArtists, searchTracks, clearResults})(SearchPage);
+export default connect(mapStateToProps, {searchAlbums, searchArtists, searchTracks, clearResults, setTrack, addTrack})(SearchPage);

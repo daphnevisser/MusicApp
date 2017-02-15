@@ -13,10 +13,16 @@ const AlbumInfo = (props) => {
   const tracks = album.tracks.map((track) => {
     return (
       <li key={track.id}>
-        <FontAwesome name="play" size="lg" className="simple-play-icon" />
-        <div className="info">
+        <FontAwesome name="play" size="lg" className="simple-play-icon"
+          onClick={() => props.setTrack(track)} title="Play song" />
+        <div className="info" onClick={() => props.setTrack(track)}>
           <p className="track-name">{track.name}</p>
         </div>
+        <FontAwesome className="add-button"
+            onClick={() => props.addTrack(track)}
+            name="plus"
+            size="lg"
+            title="Add to queue" />
       </li>
     );
   });

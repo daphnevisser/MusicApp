@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getAlbumInfo, addAlbum } from '../actions/index';
+import { getAlbumInfo, addAlbum, setTrack, addTrack } from '../actions/index';
 import AlbumInfo from '../components/album-info';
 
 class Album extends Component {
@@ -10,7 +10,8 @@ class Album extends Component {
   render() {
     return (
       <div>
-        <AlbumInfo albumInfo={this.props.albumInfo} addAlbum={this.props.addAlbum} />
+        <AlbumInfo albumInfo={this.props.albumInfo} addAlbum={this.props.addAlbum}
+          setTrack={this.props.setTrack} addTrack={this.props.addTrack} />
       </div>
     );
   }
@@ -22,4 +23,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { getAlbumInfo, addAlbum })(Album);
+export default connect(mapStateToProps, { getAlbumInfo, addAlbum, setTrack, addTrack })(Album);
