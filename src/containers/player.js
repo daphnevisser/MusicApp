@@ -15,6 +15,7 @@ class Player extends Component {
     this.setPosition = this.setPosition.bind(this);
     this.handlePlaying = this.handlePlaying.bind(this);
     this.nextSong = this.nextSong.bind(this);
+    this.volumeOff = this.volumeOff.bind(this);
     this.state = {
       playStatus: Sound.status.PLAYING,
       position: 0,
@@ -33,6 +34,10 @@ class Player extends Component {
 
   setVolume(component, value) {
     this.setState({volume: value});
+  }
+
+  volumeOff() {
+    this.setState({volume: 0});
   }
 
   setPosition(component, value) {
@@ -104,7 +109,11 @@ class Player extends Component {
             title="Next" />
         </div>
         <div className="volume-control">
-          <FontAwesome className="volume-icon" name="volume-down" />
+          {this.state.volume == 0 ?
+          <FontAwesome className="volume-icon" name="volume-off"
+            title="volume off" /> :
+          <FontAwesome className="volume-icon volume-down" name="volume-down"
+            title="volume" onClick={this.volumeOff}/>}
           <div className="sound-slider">
             <InputRange
               maxValue={100}

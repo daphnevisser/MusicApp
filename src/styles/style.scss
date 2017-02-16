@@ -10,6 +10,7 @@ $border-color: #2b9399;
 $border-color-two: #416082;
 $player-color: #1f2d3e;
 $placeholder: #00BB27;
+$volume-button: #ff5445;
 /* ==============================
    BASIC
 ============================== */
@@ -509,8 +510,16 @@ nav {
       width: 70%;
     }
     .volume-icon {
-      margin-right: 5px;
+      margin-right: 7px;
       font-size: 115%;
+
+    }
+    .volume-down {
+      cursor: pointer;
+      transition: color 0.4s;
+      &:hover {
+        color: $volume-button;
+      }
     }
   }
 }
@@ -582,3 +591,7 @@ nav {
   width: 100%;
   height: 1rem;
 }
+/* ==============================
+   MEDIA QUERIES
+============================== */
+@import '_queries';
