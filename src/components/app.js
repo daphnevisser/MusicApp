@@ -17,4 +17,8 @@ class App extends Component {
   }
 }
 
+App.propTypes = {
+  children: React.PropTypes.element,
+};
+
 export default App;

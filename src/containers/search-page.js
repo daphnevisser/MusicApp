@@ -73,6 +73,16 @@ class SearchPage extends Component {
   }
 }
 
+SearchPage.propTypes = {
+  searchAlbums: React.PropTypes.func,
+  searchArtists: React.PropTypes.func,
+  searchTracks: React.PropTypes.func,
+  clearResults: React.PropTypes.func,
+  setTrack: React.PropTypes.func,
+  addTrack: React.PropTypes.func,
+  searchResult: React.PropTypes.object
+};
+
 function mapStateToProps(state) {
   return {
     searchResult: state.searchResult

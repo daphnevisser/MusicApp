@@ -31,4 +31,8 @@ const AlbumsList = (props) => {
   );
 };
 
+AlbumsList.propTypes = {
+  albums: React.PropTypes.object,
+};
+
 export default AlbumsList;

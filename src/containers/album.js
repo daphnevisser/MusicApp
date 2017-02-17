@@ -17,6 +17,15 @@ class Album extends Component {
   }
 }
 
+Album.propTypes = {
+  getAlbumInfo: React.PropTypes.func,
+  addAlbum: React.PropTypes.func,
+  setTrack: React.PropTypes.func,
+  addTrack: React.PropTypes.func,
+  albumInfo: React.PropTypes.object,
+  params: React.PropTypes.object
+};
+
 function mapStateToProps(state) {
   return {
     albumInfo: state.albumInfo

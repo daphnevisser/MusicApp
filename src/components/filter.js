@@ -65,4 +65,11 @@ class Filter extends Component {
   }
 }
 
+Filter.propTypes = {
+  getTracks: React.PropTypes.func,
+  getArtists: React.PropTypes.func,
+  getAlbums: React.PropTypes.func,
+  comp: React.PropTypes.string
+};
+
 export default connect(null, {getTracks, getArtists, getAlbums})(Filter);

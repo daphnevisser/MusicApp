@@ -16,6 +16,14 @@ class Artist extends Component {
   }
 }
 
+Artist.propTypes = {
+  getArtistInfo: React.PropTypes.func,
+  addTrack: React.PropTypes.func,
+  setTrack: React.PropTypes.func,
+  params: React.PropTypes.object,
+  artistInfo: React.PropTypes.object
+};
+
 function mapStateToProps(state) {
   return {
     artistInfo: state.artistInfo

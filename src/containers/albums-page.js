@@ -18,6 +18,11 @@ class AlbumsPage extends Component {
   }
 }
 
+AlbumsPage.propTypes = {
+  getAlbums: React.PropTypes.func,
+  albums: React.PropTypes.object
+};
+
 function mapStateToProps(state) {
   return {
     albums: state.albums

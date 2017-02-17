@@ -31,7 +31,9 @@ export function getAlbums(sorting, genre) {
   };
 }
 
-// Search actions
+/* ==============================
+   SEARCH ACTIONS
+============================== */
 
 export function searchTracks(value) {
   const request = axios.get(`${ROOT_URL}tracks/${CLIENT_ID}${FORMAT}&limit=20&namesearch=${value}&imagesize=60`);
@@ -63,7 +65,9 @@ export function clearResults() {
   };
 }
 
-// Detail pages actions
+/* ==============================
+   DETAIL PAGE ACTIONS
+============================== */
 
 export function getArtistInfo(id) {
   const request = axios.get(`${ROOT_URL}artists/tracks/${CLIENT_ID}${FORMAT}&id=${id}&imagesize=60`);
@@ -81,7 +85,9 @@ export function getAlbumInfo(id) {
   };
 }
 
-// PLayer actions
+/* ==============================
+   PLAYER ACTIONS
+============================== */
 export function setTrack(track) {
   return {
     type: types.SET_TRACK,

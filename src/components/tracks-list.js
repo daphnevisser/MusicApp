@@ -20,10 +20,10 @@ const TracksList = (props) => {
           <Link className="track-artist" to={'/artist/' + track.artist_id}>{track.artist_name}</Link>
         </div>
         <FontAwesome className="add-button"
-            onClick={() => props.addTrack(track)}
-            name="plus"
-            size="lg"
-            title="Add to queue" />
+          onClick={() => props.addTrack(track)}
+          name="plus"
+          size="lg"
+          title="Add to queue" />
       </li>
     );
   });
@@ -35,6 +35,10 @@ const TracksList = (props) => {
       </ul>
     </div>
   );
+};
+
+TracksList.propTypes = {
+  tracks: React.PropTypes.object
 };
 
 export default TracksList;

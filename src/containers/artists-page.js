@@ -18,6 +18,11 @@ class ArtistsPage extends Component {
   }
 }
 
+ArtistsPage.propTypes = {
+  getArtists: React.PropTypes.func,
+  artists: React.PropTypes.object
+};
+
 function mapStateToProps(state) {
   return {
     artists: state.artists

@@ -51,4 +51,8 @@ const ArtistInfo = (props) => {
   );
 };
 
+ArtistInfo.propTypes = {
+  artistInfo: React.PropTypes.object,
+};
+
 export default ArtistInfo;

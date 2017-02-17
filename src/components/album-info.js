@@ -19,10 +19,10 @@ const AlbumInfo = (props) => {
           <p className="track-name">{track.name}</p>
         </div>
         <FontAwesome className="add-button"
-            onClick={() => props.addTrack(track)}
-            name="plus"
-            size="lg"
-            title="Add to queue" />
+          onClick={() => props.addTrack(track)}
+          name="plus"
+          size="lg"
+          title="Add to queue" />
       </li>
     );
   });
@@ -41,6 +41,11 @@ const AlbumInfo = (props) => {
       </ul>
     </section>
   );
+};
+
+AlbumInfo.propTypes = {
+  albumInfo: React.PropTypes.object,
+  addAlbum: React.PropTypes.func,
 };
 
 export default AlbumInfo;

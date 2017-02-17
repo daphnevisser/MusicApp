@@ -22,10 +22,10 @@ const SearchResults = (props) => {
               <Link className="artist-name" to={'/artist/' + result.artist_id}>{result.artist_name}</Link>
             </div>
             <FontAwesome className="add-button"
-                onClick={() => props.addTrack(result)}
-                name="plus"
-                size="lg"
-                title="Add to queue" />
+              onClick={() => props.addTrack(result)}
+              name="plus"
+              size="lg"
+              title="Add to queue" />
           </li>
         );
       case "albums":
@@ -62,6 +62,11 @@ const SearchResults = (props) => {
       </ul>
     </div>
   );
+};
+
+SearchResults.propTypes = {
+  search: React.PropTypes.object,
+  radio: React.PropTypes.string
 };
 
 export default SearchResults;

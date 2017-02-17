@@ -5,7 +5,6 @@ import { setTrack, incrementPosition } from '../actions';
 import FontAwesome from 'react-fontawesome';
 import InputRange from 'react-input-range';
 
-
 class Player extends Component {
   constructor() {
     super();

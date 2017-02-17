@@ -18,6 +18,13 @@ class TracksPage extends Component {
   }
 }
 
+TracksPage.propTypes = {
+  getTracks: React.PropTypes.func,
+  setTrack: React.PropTypes.func,
+  addTrack: React.PropTypes.func,
+  tracks: React.PropTypes.object
+};
+
 function mapStateToProps(state) {
   return {
     tracks: state.tracks

@@ -32,10 +32,10 @@ class Queue extends Component {
 }
 
 Queue.propTypes = {
-    clearList: React.PropTypes.func,
-    setTrack: React.PropTypes.func,
-    replayList: React.PropTypes.func,
-    list: React.PropTypes.object
+  clearList: React.PropTypes.func,
+  setTrack: React.PropTypes.func,
+  replayList: React.PropTypes.func,
+  list: React.PropTypes.object
 };
 
 function mapStateTopProps(state) {

@@ -30,4 +30,8 @@ const ArtistsList = (props) => {
   );
 };
 
+ArtistsList.propTypes = {
+  artists: React.PropTypes.object,
+};
+
 export default ArtistsList;
