@@ -86,9 +86,7 @@ nav {
     &:hover {
       background-color: $primary-color;
       border-left: 3px solid $text-color;
-      .add-button {
-        color: $text-color;
-      }
+      .add-button { color: $text-color; }
     }
     .play-icon {
       position: absolute;
@@ -97,9 +95,7 @@ nav {
       top: 10px;
       font-size: 250%;
       transition: color 0.4s;
-      &:hover {
-        color: $text-color;
-      }
+      &:hover { color: $text-color; }
     }
     img {
       height: 50px;
@@ -120,9 +116,7 @@ nav {
       margin-right: 2px;
       color: $primary-color;
       transition: color 0.4s;
-      &:hover {
-        color: $detail-color;
-      }
+      &:hover { color: $detail-color; }
     }
   }
   .info {
@@ -138,14 +132,10 @@ nav {
       text-decoration: none;
       color: $text-color;
     }
-    .track-name {
-      font-size: 120%;
-    }
+    .track-name { font-size: 120%; }
     .track-artist {
       font-size: 80%;
-      &:hover {
-        text-decoration: underline;
-      }
+      &:hover { text-decoration: underline; }
     }
   }
 }
@@ -160,9 +150,7 @@ nav {
   margin: 10px;
   border-radius: 2px;
   transition: background 0.4s;
-  &:hover {
-    background: $detail-color;
-  }
+  &:hover { background: $detail-color; }
 }
 .jamendo {
   font-size: 80%;
@@ -171,9 +159,7 @@ nav {
   a {
     color: $detail-color;
     text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+    &:hover { text-decoration: underline; }
   }
 }
 /* ==============================
@@ -198,24 +184,18 @@ nav {
 /* ==============================
    TRACKS PAGE
 ============================== */
-.list-of-tracks {
-
-}
+// See .list-style in reusable
 /* ==============================
    ARTISTS PAGE
 ============================== */
 .list-of-artists {
-  a {
-    color: $text-color;
-  }
+  a { color: $text-color; }
   .info {
     margin-top: 12px;
     .artist-name {
       margin: 2px 0;
       font-size: 120%;
-      &:hover {
-        cursor: pointer;
-      }
+      &:hover { cursor: pointer; }
     }
   }
 }
@@ -227,15 +207,12 @@ nav {
     .album-name {
       font-size: 120%;
       display: block;
-      &:hover {
-        text-decoration: underline;
-      }
+      @extend .overflow;
+      &:hover { text-decoration: underline; }
     }
     .album-artist {
       font-size: 80%;
-      &:hover {
-        text-decoration: underline;
-      }
+      &:hover { text-decoration: underline; }
     }
   }
 }
@@ -259,18 +236,10 @@ nav {
       padding-left: 8px;
     }
   }
-  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $text-color;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    color: $text-color;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    color: $text-color;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    color: $text-color;
-  }
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */color: $text-color;  }
+  ::-moz-placeholder { /* Firefox 19+ */color: $text-color; }
+  :-ms-input-placeholder { /* IE 10+ */color: $text-color; }
+  :-moz-placeholder { /* Firefox 18- */color: $text-color; }
   .options {
     input {
       width: 10%;
@@ -292,27 +261,30 @@ nav {
       .artist-name {
         font-size: 80%;
         @extend .overflow;
-        &:hover {
-          text-decoration: underline;
-        }
+        &:hover { text-decoration: underline; }
       }
       .album-name {
         font-size: 120%;
         display: block;
         @extend .overflow;
-        &:hover {
-          text-decoration: underline;
-        }
+        &:hover { text-decoration: underline; }
       }
     }
-    .sp {
-      margin-top: 15px;
-    }
+    .sp { margin-top: 15px; }
   }
 }
 /* ==============================
    ARTIST INFO
 ============================== */
+.unavailable {
+  margin: 20px 10px;
+  text-align: center;
+  .sad {
+    font-size: 300%;
+    margin-top: 30px;
+    color: $primary-color;
+  }
+}
 .artist {
   .artist-name {
     height: 100px;
@@ -339,24 +311,20 @@ nav {
   .join-website{
     margin-left: 10px;
     height: 60px;
-    .joindate {
-      font-size: 90%;
-    }
+    .joindate { font-size: 90%; }
     .website {
-      color: $text-color;
+      color: $detail-color;
       text-decoration: none;
       font-size: 80%;
       width: 300px;
+      &:hover { text-decoration: underline; }
     }
   }
-  .info {
-    .track-name {
-      font-size: 120%;
-      margin: 10px 0 0;
-    }
+  .info .track-name {
+    font-size: 120%;
+    margin: 10px 0 0;
   }
 }
-
 /* ==============================
    ALBUM INFO
 ============================== */
@@ -378,17 +346,15 @@ nav {
       padding: 30px 5px;
     }
     h3 {
-      float: left;
       margin: 20px 0 5px;
-      width: 200px;
+      padding-top: 10px;
+      width: 280px;
     }
     .artist-name {
       font-size: 85%;
       color: $text-color;
       text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
+      &:hover { text-decoration: underline; }
     }
   }
   .releasedate {
@@ -410,9 +376,7 @@ nav {
     &:hover {
       background-color: $primary-color;
       border-left: 3px solid $text-color;
-      .add-button {
-        color: $text-color;
-      }
+      .add-button { color: $text-color; }
     }
     .simple-play-icon {
       float: left;
@@ -431,23 +395,17 @@ nav {
       margin-right: 2px;
       color: $primary-color;
       transition: color 0.4s;
-      &:hover {
-        color: $detail-color;
-      }
+      &:hover { color: $detail-color; }
     }
-    .info {
-      display: inline-block;
-    }
+    .info { display: inline-block; }
   }
 }
 /* ==============================
    QUEUE
 ============================== */
-.queue {
-  .queue-list {
-    @extend .album-tracks;
-    margin-top: 0;
-  }
+.queue .queue-list {
+  @extend .album-tracks;
+  margin-top: 0;
 }
 /* ==============================
    PLAYER
@@ -459,20 +417,14 @@ nav {
   bottom: 0;
   height: 50px;
   background: $player-color;
-  .position-slider .InputRange {
-    height: 0;
-  }
+  .position-slider .InputRange { height: 0; }
   .song-length {
     font-size: 75%;
     position: absolute;
     margin-top: 5px;
   }
-  .duration-time {
-    right: 5px;
-  }
-  .current-time {
-    left: 5px;
-  }
+  .duration-time { right: 5px; }
+  .current-time { left: 5px; }
   .player-song-info {
     margin: 23px 5px 10px;
     width: 40%;
@@ -494,9 +446,7 @@ nav {
       font-size: 120%;
       margin: 0 8px;
       transition: color 0.4s;
-      &:hover {
-        color: $primary-color;
-      }
+      &:hover { color: $primary-color; }
     }
   }
   .volume-control {
@@ -512,14 +462,11 @@ nav {
     .volume-icon {
       margin-right: 7px;
       font-size: 115%;
-
     }
     .volume-down {
       cursor: pointer;
       transition: color 0.4s;
-      &:hover {
-        color: $volume-button;
-      }
+      &:hover { color: $volume-button; }
     }
   }
 }
@@ -543,26 +490,25 @@ nav {
   top: 50%;
   transition: -webkit-transform 0.3s ease-out, box-shadow 0.3s ease-out;
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-  width: 0.65rem; }
-  .InputRange-slider:active {
+  width: 0.65rem;
+}
+.InputRange-slider:active {
   -webkit-transform: scale(1.3);
-  transform: scale(1.3); }
-  .InputRange-slider:focus {
-  box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }
-  .InputRange.is-disabled .InputRange-slider {
+  transform: scale(1.3);
+}
+.InputRange-slider:focus { box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }
+.InputRange.is-disabled .InputRange-slider {
   background: #cccccc;
   border: 1px solid #cccccc;
   box-shadow: none;
-   -webkit-transform: none;
+  -webkit-transform: none;
   transform: none;
 }
 .InputRange-sliderContainer {
   -webkit-transition: left 0.3s ease-out;
   transition: left 0.3s ease-out;
 }
-.InputRange-label {
-  display: none;
-}
+.InputRange-label { display: none; }
 .InputRange-track {
   background: #eeeeee;
   border-radius: 0.3rem;
@@ -573,9 +519,7 @@ nav {
   -webkit-transition: left 0.3s ease-out, width 0.3s ease-out;
   transition: left 0.3s ease-out, width 0.3s ease-out;
 }
-.InputRange.is-disabled .InputRange-track {
-  background: #eeeeee;
-}
+.InputRange.is-disabled .InputRange-track { background: #eeeeee; }
 .InputRange-track--container {
   left: 0;
   margin-top: -0.15rem;
@@ -583,9 +527,7 @@ nav {
   right: 0;
   top: 50%;
 }
-.InputRange-track--active {
-  background: $primary-color;
-}
+.InputRange-track--active { background: $primary-color; }
 .InputRange {
   position: relative;
   width: 100%;

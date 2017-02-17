@@ -51,7 +51,7 @@ class SearchPage extends Component {
           <input
             value={this.state.term}
             onChange={this.onInputChange}
-            placeholder="Write a song, album or artist.."/>
+            placeholder="Search for a song, album or artist.."/>
         </form>
         <form className="options">
           <input type="radio" name="options" value="tracks"

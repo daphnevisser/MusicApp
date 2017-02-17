@@ -7,6 +7,14 @@ const ArtistInfo = (props) => {
       <div className="loading">Loading...</div>
     );
   }
+  if (!props.artistInfo.results[0]) {
+    return (
+      <div className="unavailable">
+        <p>The selected artist currently has no available content</p>
+          <FontAwesome name="frown-o" size="lg" className="sad" />
+      </div>
+    );
+  }
   const artist = props.artistInfo.results[0];
   const tracks = artist.tracks.map((track) => {
     return (
@@ -34,7 +42,7 @@ const ArtistInfo = (props) => {
       </div>
       <div className="join-website">
         <p className="joindate">Joindate: {artist.joindate}</p>
-        <a href={artist.website} target="_blank" className="website">{artist.website ? "Website" : null}</a>
+        <a href={artist.website} target="_blank" className="website">{artist.website ? "Official website" : null}</a>
       </div>
       <ul className="list-style">
         {tracks}
