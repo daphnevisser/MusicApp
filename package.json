@@ -41,8 +41,7 @@
     "react-router-redux": "4.0.6",
     "react-sound": "0.5.2",
     "redux": "3.6.0",
-    "redux-promise": "0.5.3",
-    "redux-thunk": "2.1.0"
+    "redux-promise": "0.5.3"
   },
   "devDependencies": {
     "autoprefixer": "6.5.1",
